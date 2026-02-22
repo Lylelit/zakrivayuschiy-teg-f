@@ -20,7 +20,7 @@
   margin: var(--header-margin) 0;
   border: var(--border);
   padding: var(--header-padding-inline) var(--header-padding-block);
-  font-family: var(--accent-font, 'PressStart2P'), sans-serif;
+  font-family: var(--accent-font, 'PressStart2P'), fantasy;
   text-transform: uppercase;
   background-color: var(--main-color);
 }
@@ -76,42 +76,42 @@
   aspect-ratio: 1;
 }
 
-.first_image {
+.filter-vivid {
   filter: saturate(140%) brightness(1.1);
 }
 
-.second_image {
+.filter-bright {
   filter: brightness(1.15) contrast(105%);
 }
 
-.third_image {
+.filter-cool {
   filter: hue-rotate(10deg) saturate(85%);
 }
 
-.fourth_image {
+.filter-dark {
   filter: brightness(0.85) contrast(120%) saturate(70%);
 }
 
-.fifth_image {
+.filter-faded {
   filter: grayscale(70%) brightness(0.9);
 }
 
-.sixth_image {
+.filter-grayscale {
   filter: grayscale(100%) brightness(0.75) contrast(110%);
 }
 
-.seventh_image {
+.filter-warm {
   filter: sepia(25%) saturate(160%) brightness(1.05) contrast(115%);
 }
 
-.eighth_image {
+.filter-focus {
   filter: hue-rotate(5deg) saturate(130%) brightness(1.1) contrast(110%);
 }
 
 .card__label {
   position: absolute;
   opacity: 0.5;
-  font-family: var(--accent-font, 'PressStart2P'), sans-serif;
+  font-family: var(--accent-font, 'PressStart2P'), fantasy;
   font-size: var(--main-button-font-size);
   text-shadow: var(--shadows-label);
   inset-block-start: var(--decor-offset-top);
@@ -168,23 +168,38 @@
 
 .button {
   display: flex;
+  justify-content: center;
+  align-items: center;
   border: var(--border);
   background-color: transparent;
   transition: box-shadow 0.3s ease;
   cursor: pointer;
   appearance: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: var(--accent-color);
+  transition: transform 0.5s ease-in-out;
+  transform: translateX(-100%);
+}
+
+.button:hover::before {
+  transform: translateX(0);
 }
 
 .card__like-button {
-  justify-content: center;
-  align-items: center;
   padding: 7px 36px;
   max-inline-size: 8.125rem;
 }
 
 .button__text {
   color: var(--main-color);
-  font-family: var(--accent-font, 'PressStart2P'), sans-serif;
+  font-family: var(--accent-font, 'PressStart2P'), fantasy;
   font-size: var(--main-button-font-size);
   mix-blend-mode: difference;
 }
@@ -218,7 +233,7 @@
   flex-direction: column;
   row-gap: 30px;
   padding: 27px;
-  font-family: var(--accent-font, 'PressStart2P'), sans-serif;
+  font-family: var(--accent-font, 'PressStart2P'), fantasy;
   font-size: var(--main-button-font-size);
   inline-size: var(--modal-size);
 }
@@ -265,24 +280,6 @@
 
 .button:focus-visible {
   box-shadow: 2px 2px 0 var(--accent-color);
-}
-
-.button-fill {
-  position: relative;
-  overflow: hidden;
-}
-
-.button-fill::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-color: var(--accent-color);
-  transition: transform 0.5s ease-in-out;
-  transform: translateX(-100%);
-}
-
-.button-fill:hover::before {
-  transform: translateX(0);
 }
 
 .core {

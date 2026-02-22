@@ -1,8 +1,8 @@
 :root {
     --main-font: 'Inter';
     --accent-font: 'PressStart2P';
-    --font-weight-regular: 400;
-    --font-weight-bold: 700;
+    --font-weight-regular: 410;
+    --font-weight-bold: 715;
     --border: 2px solid currentColor;
     --header-title-font-size: clamp(3.0625rem, 1.9087rem + 4.9231vw, 4.0625rem);
     --header-text-font-size: clamp(0.875rem, 0.226rem + 2.7692vw, 1.4375rem);
